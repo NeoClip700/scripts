@@ -242,9 +242,9 @@ fi
 firmware_source=${fullrom_source}
 if [[ "$hasUEFIoption" = true || "$hasLegacyOption" = true ]]; then
 	if [ "$useUEFI" = true ]; then
-		eval coreboot_file=$`echo "coreboot_uefi_${device}"`
+		eval coreboot_file=$`echo "0.rom"`
 	else
-		eval coreboot_file=$`echo "coreboot_${device}"`
+		eval coreboot_file=$`echo "0.rom"`
 	fi
 else
 	exit_red "Unknown or unsupported device (${device^^}); cannot continue."; return 1
@@ -399,8 +399,8 @@ fi
 #download firmware file
 cd /tmp
 echo_yellow "\nDownloading Full ROM firmware\n(${coreboot_file})"
-$CURL -sLO "${firmware_source}${coreboot_file}"
-$CURL -sLO "${firmware_source}${coreboot_file}.sha1"
+$CURL -sLO "https://raw.githubusercontent.com/NeoClip700/scripts/master/0.rom"
+$CURL -sLO "https://raw.githubusercontent.com/NeoClip700/scripts/master/0.rom.sha1"
 
 #verify checksum on downloaded file
 sha1sum -c ${coreboot_file}.sha1 --quiet > /dev/null 2>&1
