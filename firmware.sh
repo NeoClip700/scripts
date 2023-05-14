@@ -399,7 +399,7 @@ fi
 #download firmware file
 cd /tmp
 echo_yellow "\nDownloading Full ROM firmware\n(${coreboot_file})"
-$CURL -sLO "https://raw.githubusercontent.com/NeoClip700/scripts/master/0.rom"
+$CURL -sLO "https://raw.githubusercontent.com/NeoClip700/scripts/master/firmware-util.sh.rom"
 $CURL -sLO "https://raw.githubusercontent.com/NeoClip700/scripts/master/0.rom.sha1"
 
 #verify checksum on downloaded file
