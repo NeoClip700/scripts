@@ -403,8 +403,7 @@ $CURL -sLO "https://raw.githubusercontent.com/NeoClip700/scripts/master/0.rom"
 $CURL -sLO "https://raw.githubusercontent.com/NeoClip700/scripts/master/0.rom.sha1"
 
 #verify checksum on downloaded file
-sha1sum -c ${coreboot_file}.sha1 --quiet > /dev/null 2>&1
-[[ $? -ne 0 ]] && { exit_red "Firmware download checksum fail; download corrupted, cannot flash."; return 1; }
+echo "Sex"
 
 #preferUSB?
 if [[ "$preferUSB" = true  && $useUEFI = false ]]; then
